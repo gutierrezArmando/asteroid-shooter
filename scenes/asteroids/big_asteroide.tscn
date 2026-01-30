@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bk8d45l3atexe"]
 
-[ext_resource type="Script" uid="uid://cpxn21f8rmceh" path="res://scenes/asteroids/big_asteroide.gd" id="1_ptkvv"]
+[ext_resource type="Script" uid="uid://cpxn21f8rmceh" path="res://scenes/asteroids/asteroide.gd" id="1_ptkvv"]
 [ext_resource type="Texture2D" uid="uid://ycapv7uqwhek" path="res://assets/sprites/rock-big.png" id="1_xapdi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ds0fb"]

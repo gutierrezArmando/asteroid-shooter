@@ -1,16 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://boqrcrb4qlr4j"]
 
 [ext_resource type="Texture2D" uid="uid://cod7fn08kwtvr" path="res://assets/sprites/rock-medium.png" id="1_3yhqx"]
-[ext_resource type="Script" uid="uid://cpxn21f8rmceh" path="res://scenes/asteroids/big_asteroide.gd" id="1_p71un"]
+[ext_resource type="Script" uid="uid://cpxn21f8rmceh" path="res://scenes/asteroids/asteroide.gd" id="1_p71un"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jsh0f"]
 radius = 51.21265
 height = 123.03659
 
-[node name="MediumAsteroid" type="Area2D"]
-position = Vector2(1244, 324)
+[node name="MediumAsteroid" type="Area2D" groups=["asteroids"]]
 script = ExtResource("1_p71un")
-speed = 100.0
+min_speed = 250.0
+max_speed = 350.0
+min_rotation_speed = -180.0
+max_rotation_speed = 180.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,3 +22,5 @@ texture = ExtResource("1_3yhqx")
 position = Vector2(-3, 0)
 rotation = -1.3089969
 shape = SubResource("CapsuleShape2D_jsh0f")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

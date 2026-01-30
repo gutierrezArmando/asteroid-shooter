@@ -1,15 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://chx0nxmyhc8ut"]
 
 [ext_resource type="Texture2D" uid="uid://7exna2pxnjon" path="res://assets/sprites/rock-small.png" id="1_5yf7l"]
-[ext_resource type="Script" uid="uid://cpxn21f8rmceh" path="res://scenes/asteroids/big_asteroide.gd" id="1_asb04"]
+[ext_resource type="Script" uid="uid://cpxn21f8rmceh" path="res://scenes/asteroids/asteroide.gd" id="1_asb04"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ndwlm"]
 radius = 36.0
 
-[node name="SmallAsteroid" type="Area2D"]
-position = Vector2(1192, 288)
+[node name="SmallAsteroid" type="Area2D" groups=["asteroids"]]
 script = ExtResource("1_asb04")
-speed = 150.0
+min_speed = 200.0
+max_speed = 300.0
+min_rotation_speed = -180.0
+max_rotation_speed = 180.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -18,3 +20,5 @@ texture = ExtResource("1_5yf7l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_ndwlm")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
