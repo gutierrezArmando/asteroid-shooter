@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://fqe0tuxenpsk"]
+[gd_scene load_steps=9 format=3 uid="uid://fqe0tuxenpsk"]
 
 [ext_resource type="Texture2D" uid="uid://bvxfc3xffg84o" path="res://assets/sprites/background.png" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bk8d45l3atexe" path="res://scenes/asteroids/big_asteroide.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://xbv13g0ihs3q" path="res://scenes/player/player.tscn" id="3_k2fmo"]
 [ext_resource type="Script" uid="uid://eprame22ndba" path="res://scenes/main/asteroide_spawder.gd" id="3_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://boqrcrb4qlr4j" path="res://scenes/asteroids/medium_asteroid.tscn" id="5_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://chx0nxmyhc8ut" path="res://scenes/asteroids/small_asteroid.tscn" id="6_hujxm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3cfh"]
 size = Vector2(1170.5, 20)
@@ -50,7 +52,7 @@ shape = SubResource("RectangleShape2D_k2fmo")
 [node name="AsteroideSpawder" type="Marker2D" parent="."]
 position = Vector2(1281, 339)
 script = ExtResource("3_l3cfh")
-big_asteroid_scene = ExtResource("2_sugp2")
+asteroids = Array[PackedScene]([ExtResource("2_sugp2"), ExtResource("5_ow5a4"), ExtResource("6_hujxm")])
 
 [node name="Timer" type="Timer" parent="AsteroideSpawder"]
 autostart = true
